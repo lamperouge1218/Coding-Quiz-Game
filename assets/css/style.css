@@ -1,6 +1,11 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 header {
     display: flex;
     justify-content: space-between;
+    color: darkblue;
 }
 
 main {
@@ -21,7 +26,6 @@ button {
     font-size: 15px;
     color: white;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button:hover {
