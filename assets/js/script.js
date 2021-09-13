@@ -13,6 +13,37 @@ var quizStartButton = document.querySelector("#startbutton");
 // later on in this process
 var mainEl = document.getElementById("main");
 
+// Variables wherein my questions and their potential answers live
+var question1 = {
+    question: "Commonly used data types DO NOT include:",
+    possibleAnswers: ["strings", "booleans", "alerts", "numbers"],
+    correctAnswer: "alerts",
+}
+
+var question2 = {
+    question: "The condition in an if/else statement is enclosed within _____.",
+    possibleAnswers: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    correctAnswer: "parentheses",
+}
+
+var question3 = {
+    question: "Arrays in JavaScript can be used to store _____.",
+    possibleAnswers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+    correctAnswer: "all of the above",
+}
+
+var question4 = {
+    question: "String values must be enclosed within _______ when being assigned to variables.",
+    possibleAnswers: ["commas", "curly brackets", "quotes", "parentheses"],
+    correctAnswer: "quotes",
+}
+
+var question5 = {
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    possibleAnswers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+    correctAnswer: "console.log",
+}
+
 
 console.log(mainEl);
 
@@ -55,35 +86,7 @@ quizStartButton.addEventListener("click", function () {
 
 // Using objects and key/type stuff to store questions as single variables???
 
-var question1 = {
-    question: "Commonly used data types DO NOT include:",
-    possibleAnswers: ["strings", "booleans", "alerts", "numbers"],
-    correctAnswer: "alerts",
-}
 
-var question2 = {
-    question: "The condition in an if/else statement is enclosed within _____.",
-    possibleAnswers: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    correctAnswer: "parentheses",
-}
-
-var question3 = {
-    question: "Arrays in JavaScript can be used to store _____.",
-    possibleAnswers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    correctAnswer: "all of the above",
-}
-
-var question4 = {
-    question: "String values must be enclosed within _______ when being assigned to variables.",
-    possibleAnswers: ["commas", "curly brackets", "quotes", "parentheses"],
-    correctAnswer: "quotes",
-}
-
-var question5 = {
-    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    possibleAnswers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-    correctAnswer: "console.log",
-}
 
 for (let i = 0; i < question1.possibleAnswers.length; i++){
 
