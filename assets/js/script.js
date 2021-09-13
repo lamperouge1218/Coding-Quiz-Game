@@ -16,68 +16,103 @@ var mainEl = document.getElementById("main");
 // Variables wherein my questions and their potential answers live
 var question1 = {
     question: "Commonly used data types DO NOT include:",
-    possibleAnswers: ["strings", "booleans", "alerts", "numbers"],
-    correctAnswer: "alerts",
+    possibleAnswers: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
+    correctAnswer: "alerts"
 }
 
 var question2 = {
     question: "The condition in an if/else statement is enclosed within _____.",
-    possibleAnswers: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    correctAnswer: "parentheses",
+    possibleAnswers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
+    correctAnswer: "parentheses"
 }
 
 var question3 = {
     question: "Arrays in JavaScript can be used to store _____.",
-    possibleAnswers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    correctAnswer: "all of the above",
+    possibleAnswers: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+    correctAnswer: "all of the above"
 }
 
 var question4 = {
     question: "String values must be enclosed within _______ when being assigned to variables.",
-    possibleAnswers: ["commas", "curly brackets", "quotes", "parentheses"],
-    correctAnswer: "quotes",
+    possibleAnswers: ["1. commas", "2. curly brackets", "3. quotes", "4. parentheses"],
+    correctAnswer: "quotes"
 }
 
 var question5 = {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    possibleAnswers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-    correctAnswer: "console.log",
+    possibleAnswers: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
+    correctAnswer: "console.log"
 }
 
 
-console.log(mainEl);
+// Upon clicking a button, I want to go to the next question
+// If that button is the wrong answer, remove 10 seconds from the timer and go to next
+// If that button is the correct answer, go to the next question 
+
 
 // Add an event listener that will remove current text on the screen and
 // add new text upon click
 
+// quizStartButton.addEventListener("click", function () {
+//     mainEl.textContent = " ";
+
+//     var question1 = document.createElement("h2");
+//     var oneChoice1 = document.createElement("button");
+//     var oneChoice2 = document.createElement("button");
+//     var oneChoice3 = document.createElement("button");
+//     var oneChoice4 = document.createElement("button");
+
+//     oneChoice1.textContent = ("1. strings");
+//     oneChoice2.textContent = ("2. booleans");
+//     oneChoice3.textContent = ("3. alerts");
+//     oneChoice4.textContent = ("4. numbers");
+
+    // question1.textContent = ("Commonly used data types DO NOT include:");
+
+//     question1.setAttribute("style", "display: flex; flex-direction: column;");
+//     oneChoice1.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+//     oneChoice2.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+//     oneChoice3.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+//     oneChoice4.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;")
+
+//     mainEl.appendChild(question1);
+//     question1.appendChild(oneChoice1);
+//     question1.appendChild(oneChoice2);
+//     question1.appendChild(oneChoice3);
+//     question1.appendChild(oneChoice4);
+// })
+
 quizStartButton.addEventListener("click", function () {
     mainEl.textContent = " ";
 
-    var question1 = document.createElement("h2");
+    var question1Text = document.createElement("h2");
     var oneChoice1 = document.createElement("button");
     var oneChoice2 = document.createElement("button");
     var oneChoice3 = document.createElement("button");
     var oneChoice4 = document.createElement("button");
 
-    oneChoice1.textContent = ("1. strings");
-    oneChoice2.textContent = ("2. booleans");
-    oneChoice3.textContent = ("3. alerts");
-    oneChoice4.textContent = ("4. numbers");
+    question1Text.textContent = (question1.question);
+    oneChoice1.textContent = (question1.possibleAnswers[0]);
+    oneChoice2.textContent = (question1.possibleAnswers[1]);
+    oneChoice3.textContent = (question1.possibleAnswers[2]);
+    oneChoice4.textContent = (question1.possibleAnswers[3]);
 
-    question1.textContent = ("Commonly used data types DO NOT include:");
 
-    question1.setAttribute("style", "display: flex; flex-direction: column; justify-content: space-around;");
-    oneChoice1.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
-    oneChoice2.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
-    oneChoice3.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
-    oneChoice4.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+    mainEl.appendChild(question1Text);
+    question1Text.appendChild(oneChoice1);
+    question1Text.appendChild(oneChoice2);
+    question1Text.appendChild(oneChoice3);
+    question1Text.appendChild(oneChoice4);
 
-    mainEl.appendChild(question1);
-    question1.appendChild(oneChoice1);
-    question1.appendChild(oneChoice2);
-    question1.appendChild(oneChoice3);
-    question1.appendChild(oneChoice4);
+    question1Text.setAttribute("style", "display: flex; flex-direction: column;");
+    oneChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
+    oneChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
+    oneChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
+    oneChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+   
 })
+
 
 // In JS, will need to create, add content, style properly, and append
 // the first question into the <main> element in index
@@ -88,12 +123,12 @@ quizStartButton.addEventListener("click", function () {
 
 
 
-for (let i = 0; i < question1.possibleAnswers.length; i++){
+// for (let i = 0; i < question1.possibleAnswers.length; i++){
 
-}
+// }
 
 // an array of question objects
-var indexOfCurrentQ = 0;
-question[indexOfCurrentQ].question
+// var indexOfCurrentQ = 0;
+// question[indexOfCurrentQ].question
 
 // on click, move to next question - how do I do this???
