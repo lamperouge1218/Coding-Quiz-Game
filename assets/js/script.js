@@ -55,11 +55,10 @@ function setTime() {
             clearInterval(timerInterval);
         }
     }, 1000);
-}
+};
 
 
-quizStartButton.addEventListener("click", function () {
-    setTime();
+function createQuestion1() {
     mainEl.textContent = " ";
 
     var question1Text = document.createElement("h2");
@@ -74,6 +73,11 @@ quizStartButton.addEventListener("click", function () {
     oneChoice3.textContent = (question1.possibleAnswers[2]);
     oneChoice4.textContent = (question1.possibleAnswers[3]);
 
+    oneChoice1.currentQuestion = 1;
+    oneChoice2.currentQuestion = 1;
+    oneChoice3.currentQuestion = 1;
+    oneChoice4.currentQuestion = 1;
+
 
     mainEl.appendChild(question1Text);
     question1Text.appendChild(oneChoice1);
@@ -87,8 +91,184 @@ quizStartButton.addEventListener("click", function () {
     oneChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
 
-   
+    oneChoice1.addEventListener("click", nextQuestion);
+    oneChoice2.addEventListener("click", nextQuestion);
+    oneChoice3.addEventListener("click", nextQuestion);
+    oneChoice4.addEventListener("click", nextQuestion);
+};
+
+function createQuestion2() {
+    mainEl.textContent = " ";
+
+    var question2Text = document.createElement("h2");
+    var twoChoice1 = document.createElement("button");
+    var twoChoice2 = document.createElement("button");
+    var twoChoice3 = document.createElement("button");
+    var twoChoice4 = document.createElement("button");
+
+    question2Text.textContent = (question2.question);
+    twoChoice1.textContent = (question2.possibleAnswers[0]);
+    twoChoice2.textContent = (question2.possibleAnswers[1]);
+    twoChoice3.textContent = (question2.possibleAnswers[2]);
+    twoChoice4.textContent = (question2.possibleAnswers[3]);
+
+    twoChoice1.currentQuestion = 2;
+    twoChoice2.currentQuestion = 2;
+    twoChoice3.currentQuestion = 2;
+    twoChoice4.currentQuestion = 2;
+
+    mainEl.appendChild(question2Text);
+    question2Text.appendChild(twoChoice1);
+    question2Text.appendChild(twoChoice2);
+    question2Text.appendChild(twoChoice3);
+    question2Text.appendChild(twoChoice4);
+
+    question2Text.setAttribute("style", "display: flex; flex-direction: column;");
+    twoChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
+    twoChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
+    twoChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
+    twoChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+    twoChoice1.addEventListener("click", nextQuestion);
+    twoChoice2.addEventListener("click", nextQuestion);
+    twoChoice3.addEventListener("click", nextQuestion);
+    twoChoice4.addEventListener("click", nextQuestion);
+};
+
+function createQuestion3() {
+    mainEl.textContent = " ";
+
+    var question3Text = document.createElement("h2");
+    var threeChoice1 = document.createElement("button");
+    var threeChoice2 = document.createElement("button");
+    var threeChoice3 = document.createElement("button");
+    var threeChoice4 = document.createElement("button");
+
+    question3Text.textContent = (question3.question);
+    threeChoice1.textContent = (question3.possibleAnswers[0]);
+    threeChoice2.textContent = (question3.possibleAnswers[1]);
+    threeChoice3.textContent = (question3.possibleAnswers[2]);
+    threeChoice4.textContent = (question3.possibleAnswers[3]);
+
+    threeChoice1.currentQuestion = 3;
+    threeChoice2.currentQuestion = 3;
+    threeChoice3.currentQuestion = 3;
+    threeChoice4.currentQuestion = 3;
+
+    mainEl.appendChild(question3Text);
+    question3Text.appendChild(threeChoice1);
+    question3Text.appendChild(threeChoice2);
+    question3Text.appendChild(threeChoice3);
+    question3Text.appendChild(threeChoice4);
+
+    question3Text.setAttribute("style", "display: flex; flex-direction: column;");
+    threeChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
+    threeChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
+    threeChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
+    threeChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+    threeChoice1.addEventListener("click", nextQuestion);
+    threeChoice2.addEventListener("click", nextQuestion);
+    threeChoice3.addEventListener("click", nextQuestion);
+    threeChoice4.addEventListener("click", nextQuestion);
+};
+
+function createQuestion4() {
+    mainEl.textContent = " ";
+
+    var question4Text = document.createElement("h2");
+    var fourChoice1 = document.createElement("button");
+    var fourChoice2 = document.createElement("button");
+    var fourChoice3 = document.createElement("button");
+    var fourChoice4 = document.createElement("button");
+
+    question4Text.textContent = (question4.question);
+    fourChoice1.textContent = (question4.possibleAnswers[0]);
+    fourChoice2.textContent = (question4.possibleAnswers[1]);
+    fourChoice3.textContent = (question4.possibleAnswers[2]);
+    fourChoice4.textContent = (question4.possibleAnswers[3]);
+
+    fourChoice1.currentQuestion = 4;
+    fourChoice2.currentQuestion = 4;
+    fourChoice3.currentQuestion = 4;
+    fourChoice4.currentQuestion = 4;
+
+    mainEl.appendChild(question4Text);
+    question4Text.appendChild(fourChoice1);
+    question4Text.appendChild(fourChoice2);
+    question4Text.appendChild(fourChoice3);
+    question4Text.appendChild(fourChoice4);
+
+    question4Text.setAttribute("style", "display: flex; flex-direction: column;");
+    fourChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
+    fourChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
+    fourChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
+    fourChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+    fourChoice1.addEventListener("click", nextQuestion);
+    fourChoice2.addEventListener("click", nextQuestion);
+    fourChoice3.addEventListener("click", nextQuestion);
+    fourChoice4.addEventListener("click", nextQuestion);
+};
+
+function createQuestion5() {
+    mainEl.textContent = " ";
+
+    var question5Text = document.createElement("h2");
+    var fiveChoice1 = document.createElement("button");
+    var fiveChoice2 = document.createElement("button");
+    var fiveChoice3 = document.createElement("button");
+    var fiveChoice4 = document.createElement("button");
+
+    question5Text.textContent = (question5.question);
+    fiveChoice1.textContent = (question5.possibleAnswers[0]);
+    fiveChoice2.textContent = (question5.possibleAnswers[1]);
+    fiveChoice3.textContent = (question5.possibleAnswers[2]);
+    fiveChoice4.textContent = (question5.possibleAnswers[3]);
+
+
+    mainEl.appendChild(question5Text);
+    question5Text.appendChild(fiveChoice1);
+    question5Text.appendChild(fiveChoice2);
+    question5Text.appendChild(fiveChoice3);
+    question5Text.appendChild(fiveChoice4);
+
+    question5Text.setAttribute("style", "display: flex; flex-direction: column;");
+    fiveChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
+    fiveChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
+    fiveChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
+    fiveChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+    fiveChoice1.addEventListener("click", nextQuestion);
+};
+
+
+
+quizStartButton.addEventListener("click", function () {
+    setTime();
+    createQuestion1();
+    
 })
+
+function nextQuestion (event) {
+    if (event.currentTarget.currentQuestion === 1) {
+        createQuestion2();
+    }
+    else if (event.currentTarget.currentQuestion === 2) {
+        createQuestion3();
+    }
+    else if (event.currentTarget.currentQuestion === 3) {
+        createQuestion4();
+    }
+    else if (event.currentTarget.currentQuestion === 4) {
+        createQuestion5();
+    }
+    else {
+       mainEl.textContent = "";
+        // got to initial entrance and submission form
+    }
+}
+
 
 // Upon clicking a button, I want to go to the next question
 // If that button is the wrong answer, remove 10 seconds from the timer and go to next
