@@ -36,10 +36,10 @@ quizStartButton.addEventListener("click", function () {
     question1.textContent = ("Commonly used data types DO NOT include:");
 
     question1.setAttribute("style", "display: flex; flex-direction: column; justify-content: space-around;");
-    oneChoice1.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold;");
-    oneChoice2.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold;");
-    oneChoice3.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold;");
-    oneChoice4.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold;");
+    oneChoice1.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+    oneChoice2.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+    oneChoice3.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
+    oneChoice4.setAttribute("style", "background-color: purple; border-radius: 5px; font-size: 15px; color: white; font-weight: bold; text-align: left;");
 
     mainEl.appendChild(question1);
     question1.appendChild(oneChoice1);
@@ -50,3 +50,47 @@ quizStartButton.addEventListener("click", function () {
 
 // In JS, will need to create, add content, style properly, and append
 // the first question into the <main> element in index
+
+// Possible function that is called to run when a question is answered???
+
+// Using objects and key/type stuff to store questions as single variables???
+
+var question1 = {
+    question: "Commonly used data types DO NOT include:",
+    possibleAnswers: ["strings", "booleans", "alerts", "numbers"],
+    correctAnswer: "alerts",
+}
+
+var question2 = {
+    question: "The condition in an if/else statement is enclosed within _____.",
+    possibleAnswers: ["quotes", "curly brackets", "parentheses", "square brackets"],
+    correctAnswer: "parentheses",
+}
+
+var question3 = {
+    question: "Arrays in JavaScript can be used to store _____.",
+    possibleAnswers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+    correctAnswer: "all of the above",
+}
+
+var question4 = {
+    question: "String values must be enclosed within _______ when being assigned to variables.",
+    possibleAnswers: ["commas", "curly brackets", "quotes", "parentheses"],
+    correctAnswer: "quotes",
+}
+
+var question5 = {
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    possibleAnswers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+    correctAnswer: "console.log",
+}
+
+for (let i = 0; i < question1.possibleAnswers.length; i++){
+
+}
+
+// an array of question objects
+var indexOfCurrentQ = 0;
+question[indexOfCurrentQ].question
+
+// on click, move to next question - how do I do this???
