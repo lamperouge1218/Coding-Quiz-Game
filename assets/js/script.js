@@ -48,7 +48,12 @@ var question5 = {
 
 // Amount of time that starts when quizStartButton is initiated
 var timeLeft = 70;
+var timeLeftScore = timeLeft;
 
+
+// Variables that contain the array position of the correct answer
+// Potentially to tie to the correct button in functions below which would allow for determination
+// of correct and incorrect answers
 var corAns1 = question1.possibleAnswers[2];
 var corAns2 = question2.possibleAnswers[2];
 var corAns3 = question3.possibleAnswers[3];
@@ -63,6 +68,7 @@ function setTime() {
         if(timeLeft === 0) {
             clearInterval(timerInterval);
         };
+    
     }, 1000);
 };
 
@@ -246,7 +252,15 @@ function createQuestion5() {
     fiveChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+    fiveChoice1.addEventListener("click", nextQuestion);
+    fiveChoice2.addEventListener("click", nextQuestion);
+    fiveChoice3.addEventListener("click", nextQuestion);
+    fiveChoice4.addEventListener("click", nextQuestion);
 };
+
+// Somehow using an event.Target to show which button was clicked and comparing that button text
+// to the correct answer
 
 
 
@@ -273,16 +287,21 @@ function nextQuestion (event) {
     else if (event.currentTarget.currentQuestion === 4) {
         createQuestion5();
     }
-    // else if (timeLeft === 0) {
-    //    mainEl.textContent = "";
-    //    var doneHeader = document.createElement("h2");
-    //    var enterInitial = document.createElement("p");
+    else {
+       mainEl.textContent = "";
+
+       var doneHeader = document.createElement("h2");
+       var enterInitial = document.createElement("p");
     //    var initialEnter = document.createElement("form");
 
-    //    doneHeader.textContent = "All Done!";
-    //    enterInitial.textContent = "Your final score is " + timeLeft;
-    //     // go to initial entrance and submission form
-    // };
+       doneHeader.textContent = "All Done!";
+       enterInitial.textContent = "Your final score is " + timeLeftScore;
+       
+
+       mainEl.appendChild(doneHeader);
+       doneHeader.appendChild(enterInitial);
+        // go to initial entrance and submission form
+    };
 };
 
 
