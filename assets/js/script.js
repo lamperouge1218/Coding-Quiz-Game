@@ -15,6 +15,7 @@ var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 
 // Variables wherein my questions and their potential answers live
+// There is also a key for the correctAnswer
 var question1 = {
     question: "Commonly used data types DO NOT include:",
     possibleAnswers: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
@@ -45,8 +46,16 @@ var question5 = {
     correctAnswer: "console.log"
 };
 
+// Amount of time that starts when quizStartButton is initiated
 var timeLeft = 70;
 
+var corAns1 = question1.correctAnswer;
+var corAns2 = question2.correctAnswer;
+var corAns3 = question3.correctAnswer;
+var corAns4 = question4.correctAnswer;
+var corAns5 = question5.correctAnswer;
+
+// Function to start timer, starting at 70
 function setTime() {
     var timerInterval = setInterval(function() {
         timeLeft--;
@@ -57,7 +66,7 @@ function setTime() {
     }, 1000);
 };
 
-
+// 5 Functions for creating the question content dynamically on the page upon button click
 function createQuestion1() {
     mainEl.textContent = " ";
 
@@ -90,6 +99,8 @@ function createQuestion1() {
     oneChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
+
+
 
     oneChoice1.addEventListener("click", nextQuestion);
     oneChoice2.addEventListener("click", nextQuestion);
@@ -238,18 +249,20 @@ function createQuestion5() {
     fiveChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
-
-    
 };
 
 
 
+// Function that kicks off the quiz with createQuestion and starts timer with setTime
+// upon button click
 quizStartButton.addEventListener("click", function () {
     setTime();
     createQuestion1();
     
 });
 
+// Function that has questions switch to the next, sequentially, using code written in 
+// previous functions to determine which question is currently being displayed
 function nextQuestion (event) {
     if (event.currentTarget.currentQuestion === 1) {
         createQuestion2();
@@ -263,16 +276,16 @@ function nextQuestion (event) {
     else if (event.currentTarget.currentQuestion === 4) {
         createQuestion5();
     }
-    else if (timeLeft === 0) {
-       mainEl.textContent = "";
-       var doneHeader = document.createElement("h2");
-       var enterInitial = document.createElement("p");
-       var initialEnter = document.createElement("form");
+    // else if (timeLeft === 0) {
+    //    mainEl.textContent = "";
+    //    var doneHeader = document.createElement("h2");
+    //    var enterInitial = document.createElement("p");
+    //    var initialEnter = document.createElement("form");
 
-       doneHeader.textContent = "All Done!";
-       enterInitial.textContent = "Your final score is " + timeLeft;
-        // go to initial entrance and submission form
-    };
+    //    doneHeader.textContent = "All Done!";
+    //    enterInitial.textContent = "Your final score is " + timeLeft;
+    //     // go to initial entrance and submission form
+    // };
 };
 
 
