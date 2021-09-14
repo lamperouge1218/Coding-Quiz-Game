@@ -49,11 +49,11 @@ var question5 = {
 // Amount of time that starts when quizStartButton is initiated
 var timeLeft = 70;
 
-var corAns1 = question1.correctAnswer;
-var corAns2 = question2.correctAnswer;
-var corAns3 = question3.correctAnswer;
-var corAns4 = question4.correctAnswer;
-var corAns5 = question5.correctAnswer;
+var corAns1 = question1.possibleAnswers[2];
+var corAns2 = question2.possibleAnswers[2];
+var corAns3 = question3.possibleAnswers[3];
+var corAns4 = question4.possibleAnswers[0];
+var corAns5 = question5.possibleAnswers[1];
 
 // Function to start timer, starting at 70
 function setTime() {
@@ -99,8 +99,6 @@ function createQuestion1() {
     oneChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
-
-
 
     oneChoice1.addEventListener("click", nextQuestion);
     oneChoice2.addEventListener("click", nextQuestion);
@@ -236,7 +234,6 @@ function createQuestion5() {
     fiveChoice2.textContent = (question5.possibleAnswers[1]);
     fiveChoice3.textContent = (question5.possibleAnswers[2]);
     fiveChoice4.textContent = (question5.possibleAnswers[3]);
-
 
     mainEl.appendChild(question5Text);
     question5Text.appendChild(fiveChoice1);
