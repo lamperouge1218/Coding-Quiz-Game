@@ -9,6 +9,8 @@
 var startPageClass = document.querySelector(".startpage");
 var quizStartButton = document.querySelector("#startbutton");
 var timeEl = document.querySelector(".time");
+var confirmText = document.querySelector(".confirmation-text");
+confirmText.setAttribute("style", "text-align:center");
 
 // Creating mainEl variable so that data can be appended to it
 // later on in this process
@@ -282,33 +284,51 @@ function nextQuestion (event) {
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns1) {
             console.log(corAnsButt);
+            confirmText.textContent = "Correct!";
+            console.log(confirmText);
         }
+        else {
+            confirmText.textContent = "Wrong!"
+        };
     }
     else if (event.currentTarget.currentQuestion === 2) {
         createQuestion3();
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns2) {
             console.log(corAnsButt);
+            confirmText.textContent = "Correct!";
         }
+        else {
+            confirmText.textContent = "Wrong!"
+        };
     }
     else if (event.currentTarget.currentQuestion === 3) {
         createQuestion4();
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns3) {
             console.log(corAnsButt);
+            confirmText.textContent = "Correct!";
         }
+        else {
+            confirmText.textContent = "Wrong!"
+        };
     }
     else if (event.currentTarget.currentQuestion === 4) {
         createQuestion5();
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns4) {
             console.log(corAnsButt);
+            confirmText.textContent = "Correct!";
         }
+        else {
+            confirmText.textContent = "Wrong!"
+        };
     }
     else if (event.currentTarget.currentQuestion === 5) {
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns5) {
             console.log(corAnsButt);
+            confirmText.textContent = "Correct!";
             initialPage();
         }
         else {
