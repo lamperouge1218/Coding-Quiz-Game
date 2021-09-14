@@ -52,7 +52,7 @@ var question5 = {
 var timeLeft = 70;
 
 
-// Variables that contain the array position of the correct answer
+// Variables that contain the array position of the correct answer for use below
 // Potentially to tie to the correct button in functions below which would allow for determination
 // of correct and incorrect answers
 var corAns1 = question1.possibleAnswers[2];
