@@ -68,6 +68,7 @@ function setTime() {
         timeEl.textContent = "Time: " + timeLeft;
         if(timeLeft === 0) {
             clearInterval(timerInterval);
+            initialPage();
         };
     
     }, 1000);
