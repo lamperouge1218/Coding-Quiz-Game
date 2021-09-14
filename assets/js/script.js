@@ -289,7 +289,9 @@ function nextQuestion (event) {
             console.log(confirmText);
         }
         else {
-            confirmText.textContent = "Wrong!"
+            timeLeft -= 10;
+            confirmText.textContent = "Wrong!";
+            
         };
     }
     else if (event.currentTarget.currentQuestion === 2) {
@@ -300,7 +302,9 @@ function nextQuestion (event) {
             confirmText.textContent = "Correct!";
         }
         else {
-            confirmText.textContent = "Wrong!"
+            timeLeft -= 10;
+            confirmText.textContent = "Wrong!";
+            
         };
     }
     else if (event.currentTarget.currentQuestion === 3) {
@@ -311,7 +315,9 @@ function nextQuestion (event) {
             confirmText.textContent = "Correct!";
         }
         else {
-            confirmText.textContent = "Wrong!"
+            timeLeft -= 10;
+            confirmText.textContent = "Wrong!";
+            
         };
     }
     else if (event.currentTarget.currentQuestion === 4) {
@@ -322,7 +328,9 @@ function nextQuestion (event) {
             confirmText.textContent = "Correct!";
         }
         else {
-            confirmText.textContent = "Wrong!"
+            timeLeft -= 10;
+            confirmText.textContent = "Wrong!";
+            
         };
     }
     else if (event.currentTarget.currentQuestion === 5) {
@@ -333,6 +341,7 @@ function nextQuestion (event) {
             initialPage();
         }
         else {
+            timeLeft -= 10;
             initialPage();
         }
     }
