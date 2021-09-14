@@ -19,31 +19,31 @@ var question1 = {
     question: "Commonly used data types DO NOT include:",
     possibleAnswers: ["1. strings", "2. booleans", "3. alerts", "4. numbers"],
     correctAnswer: "alerts"
-}
+};
 
 var question2 = {
     question: "The condition in an if/else statement is enclosed within _____.",
     possibleAnswers: ["1. quotes", "2. curly brackets", "3. parentheses", "4. square brackets"],
     correctAnswer: "parentheses"
-}
+};
 
 var question3 = {
     question: "Arrays in JavaScript can be used to store _____.",
     possibleAnswers: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
     correctAnswer: "all of the above"
-}
+};
 
 var question4 = {
     question: "String values must be enclosed within _______ when being assigned to variables.",
-    possibleAnswers: ["1. commas", "2. curly brackets", "3. quotes", "4. parentheses"],
+    possibleAnswers: ["1. quotes", "2. curly brackets", "3. commas", "4. parentheses"],
     correctAnswer: "quotes"
-}
+};
 
 var question5 = {
     question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    possibleAnswers: ["1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"],
+    possibleAnswers: ["1. JavaScript", "2. console.log", "3. for loops", "4. terminal/bash"],
     correctAnswer: "console.log"
-}
+};
 
 var timeLeft = 70;
 
@@ -53,7 +53,7 @@ function setTime() {
         timeEl.textContent = "Time: " + timeLeft;
         if(timeLeft === 0) {
             clearInterval(timerInterval);
-        }
+        };
     }, 1000);
 };
 
@@ -85,7 +85,7 @@ function createQuestion1() {
     question1Text.appendChild(oneChoice3);
     question1Text.appendChild(oneChoice4);
 
-    question1Text.setAttribute("style", "display: flex; flex-direction: column;");
+    question1Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
     oneChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -123,7 +123,7 @@ function createQuestion2() {
     question2Text.appendChild(twoChoice3);
     question2Text.appendChild(twoChoice4);
 
-    question2Text.setAttribute("style", "display: flex; flex-direction: column;");
+    question2Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
     twoChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     twoChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     twoChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -161,7 +161,7 @@ function createQuestion3() {
     question3Text.appendChild(threeChoice3);
     question3Text.appendChild(threeChoice4);
 
-    question3Text.setAttribute("style", "display: flex; flex-direction: column;");
+    question3Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
     threeChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     threeChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     threeChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -199,7 +199,7 @@ function createQuestion4() {
     question4Text.appendChild(fourChoice3);
     question4Text.appendChild(fourChoice4);
 
-    question4Text.setAttribute("style", "display: flex; flex-direction: column;");
+    question4Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
     fourChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     fourChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     fourChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -233,13 +233,13 @@ function createQuestion5() {
     question5Text.appendChild(fiveChoice3);
     question5Text.appendChild(fiveChoice4);
 
-    question5Text.setAttribute("style", "display: flex; flex-direction: column;");
+    question5Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
     fiveChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice4.setAttribute("style", "margin-top: 10px; text-align: left;");
 
-    fiveChoice1.addEventListener("click", nextQuestion);
+    
 };
 
 
@@ -248,7 +248,7 @@ quizStartButton.addEventListener("click", function () {
     setTime();
     createQuestion1();
     
-})
+});
 
 function nextQuestion (event) {
     if (event.currentTarget.currentQuestion === 1) {
@@ -263,11 +263,17 @@ function nextQuestion (event) {
     else if (event.currentTarget.currentQuestion === 4) {
         createQuestion5();
     }
-    else {
+    else if (timeLeft === 0) {
        mainEl.textContent = "";
-        // got to initial entrance and submission form
-    }
-}
+       var doneHeader = document.createElement("h2");
+       var enterInitial = document.createElement("p");
+       var initialEnter = document.createElement("form");
+
+       doneHeader.textContent = "All Done!";
+       enterInitial.textContent = "Your final score is " + timeLeft;
+        // go to initial entrance and submission form
+    };
+};
 
 
 // Upon clicking a button, I want to go to the next question
