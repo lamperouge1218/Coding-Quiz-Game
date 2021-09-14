@@ -244,6 +244,11 @@ function createQuestion5() {
     fiveChoice3.textContent = (question5.possibleAnswers[2]);
     fiveChoice4.textContent = (question5.possibleAnswers[3]);
 
+    fiveChoice1.currentQuestion = 5;
+    fiveChoice2.currentQuestion = 5;
+    fiveChoice3.currentQuestion = 5;
+    fiveChoice4.currentQuestion = 5;
+
     mainEl.appendChild(question5Text);
     question5Text.appendChild(fiveChoice1);
     question5Text.appendChild(fiveChoice2);
@@ -281,21 +286,41 @@ function nextQuestion (event) {
     if (event.currentTarget.currentQuestion === 1) {
         createQuestion2();
         corAnsButt = event.target;
-        if (corAnsButt.textContent === question1.possibleAnswers[2]) {
+        if (corAnsButt.textContent === corAns1) {
             console.log(corAnsButt);
         }
     }
     else if (event.currentTarget.currentQuestion === 2) {
         createQuestion3();
+        corAnsButt = event.target;
+        if (corAnsButt.textContent === corAns2) {
+            console.log(corAnsButt);
+        }
     }
     else if (event.currentTarget.currentQuestion === 3) {
         createQuestion4();
+        corAnsButt = event.target;
+        if (corAnsButt.textContent === corAns3) {
+            console.log(corAnsButt);
+        }
     }
     else if (event.currentTarget.currentQuestion === 4) {
         createQuestion5();
+        corAnsButt = event.target;
+        if (corAnsButt.textContent === corAns4) {
+            console.log(corAnsButt);
+        }
     }
+    else if (event.currentTarget.currentQuestion === 5) {
+        corAnsButt = event.target;
+        if (corAnsButt.textContent === corAns5) {
+            console.log(corAnsButt);
+        }
+    }
+    
     else {
        mainEl.textContent = "";
+
 
        var doneHeader = document.createElement("h2");
        var enterInitial = document.createElement("p");
