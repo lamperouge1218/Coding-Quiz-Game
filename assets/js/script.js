@@ -50,7 +50,6 @@ var question5 = {
 var timeLeft = 70;
 
 
-
 // Variables that contain the array position of the correct answer
 // Potentially to tie to the correct button in functions below which would allow for determination
 // of correct and incorrect answers
@@ -267,11 +266,6 @@ function createQuestion5() {
     fiveChoice4.addEventListener("click", nextQuestion);
 };
 
-// Somehow using an event.Target to show which button was clicked and comparing that button text
-// to the correct answer
-
-
-
 // Function that kicks off the quiz with createQuestion and starts timer with setTime
 // upon button click
 quizStartButton.addEventListener("click", function () {
@@ -315,26 +309,51 @@ function nextQuestion (event) {
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns5) {
             console.log(corAnsButt);
+            initialPage();
+        }
+        else {
+            initialPage();
         }
     }
     
-    else {
-       mainEl.textContent = "";
-
-
-       var doneHeader = document.createElement("h2");
-       var enterInitial = document.createElement("p");
-    //    var initialEnter = document.createElement("form");
-
-       doneHeader.textContent = "All Done!";
-       enterInitial.textContent = "Your final score is " + timeLeft;
-       
-
-       mainEl.appendChild(doneHeader);
-       doneHeader.appendChild(enterInitial);
-        // go to initial entrance and submission form
-    };
+    
 };
+
+
+
+function initialPage() {
+    mainEl.textContent = "";
+
+
+    var doneHeader = document.createElement("h2");
+    var enterInitial = document.createElement("p");
+    var initialEnter = document.createElement("form");
+    var submitButton = document.createElement("button");
+    var submitBox = document.createElement("label");
+    var inputInit = document.createElement("input");
+    
+    doneHeader.textContent = "All Done!";
+    enterInitial.textContent = "Your final score is " + timeLeft;
+    submitButton.textContent = "Submit";
+    initialEnter.textContent = "Enter your initials: ";    
+
+    mainEl.appendChild(doneHeader);
+    doneHeader.appendChild(enterInitial);
+    mainEl.appendChild(initialEnter);
+    initialEnter.appendChild(submitBox);
+    initialEnter.appendChild(inputInit);
+    initialEnter.appendChild(submitButton);
+
+    submitButton.setAttribute("style", "margin: 20px;");
+    inputInit.setAttribute("type", "text;");
+    inputInit.setAttribute("name", "initials;");
+    inputInit.setAttribute("id", "initials;");
+    inputInit.setAttribute("placeholder", "Enter Initials");
+
+     // go to initial entrance and submission form
+}
+
+// how do I get variables between functions?? possibly just redefine?
 
 
 // Upon clicking a button, I want to go to the next question
