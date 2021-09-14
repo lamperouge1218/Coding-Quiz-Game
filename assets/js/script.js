@@ -51,6 +51,9 @@ var question5 = {
 // Amount of time that starts when quizStartButton is initiated
 var timeLeft = 70;
 
+// A variable that grows on button click, and once it reaches max number,
+// stops the timer function
+var questionCount = 0;
 
 // Variables that contain the array position of the correct answer for use below
 // Potentially to tie to the correct button in functions below which would allow for determination
@@ -69,6 +72,9 @@ function setTime() {
         if(timeLeft === 0) {
             clearInterval(timerInterval);
             initialPage();
+        }
+        else if(questionCount === 4) {
+            clearInterval(timerInterval);
         };
     
     }, 1000);
@@ -77,6 +83,7 @@ function setTime() {
 // 5 Functions for creating the question content dynamically on the page upon button click
 function createQuestion1() {
     mainEl.textContent = " ";
+    questionCount;
 
     var question1Text = document.createElement("h2");
     var oneChoice1 = document.createElement("button");
@@ -111,14 +118,12 @@ function createQuestion1() {
     oneChoice1.addEventListener("click", nextQuestion);
     oneChoice2.addEventListener("click", nextQuestion);
     oneChoice3.addEventListener("click", nextQuestion);
-    oneChoice4.addEventListener("click", nextQuestion);
-
-    
-
+    oneChoice4.addEventListener("click", nextQuestion);  
 };
 
 function createQuestion2() {
     mainEl.textContent = " ";
+    questionCount++;
 
     var question2Text = document.createElement("h2");
     var twoChoice1 = document.createElement("button");
@@ -157,6 +162,7 @@ function createQuestion2() {
 
 function createQuestion3() {
     mainEl.textContent = " ";
+    questionCount++;
 
     var question3Text = document.createElement("h2");
     var threeChoice1 = document.createElement("button");
@@ -195,6 +201,7 @@ function createQuestion3() {
 
 function createQuestion4() {
     mainEl.textContent = " ";
+    questionCount++;
 
     var question4Text = document.createElement("h2");
     var fourChoice1 = document.createElement("button");
@@ -233,6 +240,7 @@ function createQuestion4() {
 
 function createQuestion5() {
     mainEl.textContent = " ";
+    questionCount++;
 
     var question5Text = document.createElement("h2");
     var fiveChoice1 = document.createElement("button");
@@ -273,8 +281,7 @@ function createQuestion5() {
 // upon button click
 quizStartButton.addEventListener("click", function () {
     setTime();
-    createQuestion1();
-    
+    createQuestion1();    
 });
 
 // Function that has questions switch to the next, sequentially, using code written in 
