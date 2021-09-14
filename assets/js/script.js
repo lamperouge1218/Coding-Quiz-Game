@@ -48,7 +48,7 @@ var question5 = {
 
 // Amount of time that starts when quizStartButton is initiated
 var timeLeft = 70;
-var timeLeftScore = timeLeft;
+
 
 
 // Variables that contain the array position of the correct answer
@@ -110,6 +110,9 @@ function createQuestion1() {
     oneChoice2.addEventListener("click", nextQuestion);
     oneChoice3.addEventListener("click", nextQuestion);
     oneChoice4.addEventListener("click", nextQuestion);
+
+    
+
 };
 
 function createQuestion2() {
@@ -277,6 +280,10 @@ quizStartButton.addEventListener("click", function () {
 function nextQuestion (event) {
     if (event.currentTarget.currentQuestion === 1) {
         createQuestion2();
+        corAnsButt = event.target;
+        if (corAnsButt.textContent === question1.possibleAnswers[2]) {
+            console.log(corAnsButt);
+        }
     }
     else if (event.currentTarget.currentQuestion === 2) {
         createQuestion3();
@@ -295,7 +302,7 @@ function nextQuestion (event) {
     //    var initialEnter = document.createElement("form");
 
        doneHeader.textContent = "All Done!";
-       enterInitial.textContent = "Your final score is " + timeLeftScore;
+       enterInitial.textContent = "Your final score is " + timeLeft;
        
 
        mainEl.appendChild(doneHeader);
