@@ -109,7 +109,7 @@ function createQuestion1() {
     question1Text.appendChild(oneChoice3);
     question1Text.appendChild(oneChoice4);
 
-    question1Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
+    question1Text.setAttribute("style", "display: flex; flex-direction: column; align-items: center;");
     oneChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     oneChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -148,7 +148,7 @@ function createQuestion2() {
     question2Text.appendChild(twoChoice3);
     question2Text.appendChild(twoChoice4);
 
-    question2Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
+    question2Text.setAttribute("style", "display: flex; flex-direction: column; align-items: center;");
     twoChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     twoChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     twoChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -187,7 +187,7 @@ function createQuestion3() {
     question3Text.appendChild(threeChoice3);
     question3Text.appendChild(threeChoice4);
 
-    question3Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
+    question3Text.setAttribute("style", "display: flex; flex-direction: column; align-items: center;");
     threeChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     threeChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     threeChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -226,7 +226,7 @@ function createQuestion4() {
     question4Text.appendChild(fourChoice3);
     question4Text.appendChild(fourChoice4);
 
-    question4Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
+    question4Text.setAttribute("style", "display: flex; flex-direction: column; align-items: center;");
     fourChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     fourChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     fourChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -265,7 +265,7 @@ function createQuestion5() {
     question5Text.appendChild(fiveChoice3);
     question5Text.appendChild(fiveChoice4);
 
-    question5Text.setAttribute("style", "display: flex; flex-direction: column; align-items: start;");
+    question5Text.setAttribute("style", "display: flex; flex-direction: column; align-items: center;");
     fiveChoice1.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice2.setAttribute("style", "margin-top: 10px; text-align: left;");
     fiveChoice3.setAttribute("style", "margin-top: 10px; text-align: left;");
@@ -383,16 +383,19 @@ function initialPage() {
     inputInit.setAttribute("placeholder", "Enter Initials");
 };
 
-var initialsScore = [];
-var score = 
 
+// Stuff for storing the final initials and scores into an array for use in localStorage
 
-for (var i=0; i < initialsScore.length; i++) {
-    var random = storedData[i];
-    console.log(random);
-    var li = document.createElement("li");
-    li.textContent = inputInit.value + " " + timeLeft;
-}
+// var initialsScore = [];
+// // var score = ;
+// var leaderBoard = document.querySelector(".leaderboard-list");
+
+// for (var i=0; i < initialsScore.length; i++) {
+//     var random = storedData[i];
+//     console.log(random);
+//     var li = document.createElement("li");
+//     li.textContent = inputInit.value + " " + timeLeft;
+// }
 // how do I get variables between functions?? possibly just redefine?
 
 
