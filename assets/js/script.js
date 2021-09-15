@@ -73,7 +73,7 @@ function setTime() {
             clearInterval(timerInterval);
             initialPage();
         }
-        else if(questionCount === 4) {
+        else if(questionCount === 5) {
             clearInterval(timerInterval);
         };
     
@@ -83,8 +83,7 @@ function setTime() {
 // 5 Functions for creating the question content dynamically on the page upon button click
 function createQuestion1() {
     mainEl.textContent = " ";
-    questionCount;
-
+    
     var question1Text = document.createElement("h2");
     var oneChoice1 = document.createElement("button");
     var oneChoice2 = document.createElement("button");
@@ -123,8 +122,7 @@ function createQuestion1() {
 
 function createQuestion2() {
     mainEl.textContent = " ";
-    questionCount++;
-
+    
     var question2Text = document.createElement("h2");
     var twoChoice1 = document.createElement("button");
     var twoChoice2 = document.createElement("button");
@@ -162,7 +160,6 @@ function createQuestion2() {
 
 function createQuestion3() {
     mainEl.textContent = " ";
-    questionCount++;
 
     var question3Text = document.createElement("h2");
     var threeChoice1 = document.createElement("button");
@@ -201,8 +198,7 @@ function createQuestion3() {
 
 function createQuestion4() {
     mainEl.textContent = " ";
-    questionCount++;
-
+    
     var question4Text = document.createElement("h2");
     var fourChoice1 = document.createElement("button");
     var fourChoice2 = document.createElement("button");
@@ -240,8 +236,7 @@ function createQuestion4() {
 
 function createQuestion5() {
     mainEl.textContent = " ";
-    questionCount++;
-
+    
     var question5Text = document.createElement("h2");
     var fiveChoice1 = document.createElement("button");
     var fiveChoice2 = document.createElement("button");
@@ -289,6 +284,7 @@ quizStartButton.addEventListener("click", function () {
 function nextQuestion (event) {
     if (event.currentTarget.currentQuestion === 1) {
         createQuestion2();
+        questionCount++;
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns1) {
             console.log(corAnsButt);
@@ -303,6 +299,7 @@ function nextQuestion (event) {
     }
     else if (event.currentTarget.currentQuestion === 2) {
         createQuestion3();
+        questionCount++;
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns2) {
             console.log(corAnsButt);
@@ -316,6 +313,7 @@ function nextQuestion (event) {
     }
     else if (event.currentTarget.currentQuestion === 3) {
         createQuestion4();
+        questionCount++;
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns3) {
             console.log(corAnsButt);
@@ -329,6 +327,7 @@ function nextQuestion (event) {
     }
     else if (event.currentTarget.currentQuestion === 4) {
         createQuestion5();
+        questionCount++;
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns4) {
             console.log(corAnsButt);
@@ -341,6 +340,7 @@ function nextQuestion (event) {
         };
     }
     else if (event.currentTarget.currentQuestion === 5) {
+        questionCount++;
         corAnsButt = event.target;
         if (corAnsButt.textContent === corAns5) {
             console.log(corAnsButt);
@@ -363,7 +363,7 @@ var inputInit = document.createElement("input");
 
 function initialPage() {
     mainEl.textContent = "";
-    
+    quesitonCount = 6;
     
     doneHeader.textContent = "All Done!";
     enterInitial.textContent = "Your final score is " + timeLeft;
