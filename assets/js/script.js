@@ -11,6 +11,8 @@ var quizStartButton = document.querySelector("#startbutton");
 var timeEl = document.querySelector(".time");
 var confirmText = document.querySelector(".confirmation-text");
 confirmText.setAttribute("style", "text-align:center");
+var leaderboardList = document.querySelector(".leaderboard-list");
+var restartButton = document.querySelector(".restart-button");
 
 // Creating mainEl variable so that data can be appended to it
 // later on in this process
@@ -387,28 +389,31 @@ function initialPage() {
 
 leaderboardArray = [];
 
+
+
 // Stuff for storing the final initials and scores into an array for use in localStorage
 
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
+
     var initialsScore = {
         initials: inputInit.value,
         score: timeLeft
     };
-    if (inputInit.value === "") {
-        alert("Please enter your initials!")
-    };
+
     console.log(initialsScore);
-    localStorage.setItem("initialsScore", JSON.stringify(initialsScore));
-    leaderboardArray.push(initialsScore);
-    renderLeaderboard();
+    
+    localStorage.setItem("leaderboardMaterial", JSON.stringify(initialsScore));
+
+  
+
+    
 
 
 });
 
-function renderLeaderboard() {
 
-}
+
 
 
 // // var score = ;
