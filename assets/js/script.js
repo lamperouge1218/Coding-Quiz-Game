@@ -351,23 +351,18 @@ function nextQuestion (event) {
             timeLeft -= 10;
             initialPage();
         }
-    }
-    
-    
+    }      
 };
 
-
+var doneHeader = document.createElement("h2");
+var enterInitial = document.createElement("p");
+var initialEnter = document.createElement("form");
+var submitButton = document.createElement("button");
+var submitBox = document.createElement("label");
+var inputInit = document.createElement("input");
 
 function initialPage() {
     mainEl.textContent = "";
-
-
-    var doneHeader = document.createElement("h2");
-    var enterInitial = document.createElement("p");
-    var initialEnter = document.createElement("form");
-    var submitButton = document.createElement("button");
-    var submitBox = document.createElement("label");
-    var inputInit = document.createElement("input");
     
     doneHeader.textContent = "All Done!";
     enterInitial.textContent = "Your final score is " + timeLeft;
@@ -386,9 +381,7 @@ function initialPage() {
     inputInit.setAttribute("name", "initials;");
     inputInit.setAttribute("id", "initials;");
     inputInit.setAttribute("placeholder", "Enter Initials");
-
-     // go to initial entrance and submission form
-}
+};
 
 // how do I get variables between functions?? possibly just redefine?
 
