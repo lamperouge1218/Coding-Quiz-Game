@@ -383,6 +383,16 @@ function initialPage() {
     inputInit.setAttribute("placeholder", "Enter Initials");
 };
 
+var initialsScore = [];
+var score = 
+
+
+for (var i=0; i < initialsScore.length; i++) {
+    var random = storedData[i];
+    console.log(random);
+    var li = document.createElement("li");
+    li.textContent = inputInit.value + " " + timeLeft;
+}
 // how do I get variables between functions?? possibly just redefine?
 
 
@@ -404,12 +414,5 @@ function initialPage() {
 
 
 
-// for (let i = 0; i < question1.possibleAnswers.length; i++){
-
-// }
-
-// an array of question objects
-// var indexOfCurrentQ = 0;
-// question[indexOfCurrentQ].question
 
 // on click, move to next question - how do I do this???
