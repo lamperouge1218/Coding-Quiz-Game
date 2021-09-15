@@ -364,6 +364,7 @@ var inputInit = document.createElement("input");
 function initialPage() {
     mainEl.textContent = "";
     
+    
     doneHeader.textContent = "All Done!";
     enterInitial.textContent = "Your final score is " + timeLeft;
     submitButton.textContent = "Submit";
@@ -384,9 +385,29 @@ function initialPage() {
 };
 
 
+leaderboardArray = [];
+
 // Stuff for storing the final initials and scores into an array for use in localStorage
 
-// var initialsScore = [];
+submitButton.addEventListener("click", function(event){
+    event.preventDefault();
+    var initialsScore = {
+        initials: inputInit.value,
+        score: timeLeft
+    };
+    console.log(initialsScore);
+    localStorage.setItem("initialsScore", JSON.stringify(initialsScore));
+    leaderboardArray.push(initialsScore);
+    renderLeaderboard();
+
+
+});
+
+function renderLeaderboard() {
+
+}
+
+
 // // var score = ;
 // var leaderBoard = document.querySelector(".leaderboard-list");
 
