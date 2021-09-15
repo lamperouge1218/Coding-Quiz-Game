@@ -73,7 +73,7 @@ function setTime() {
             clearInterval(timerInterval);
             initialPage();
         }
-        else if(questionCount === 5) {
+        else if(questionCount === 6) {
             clearInterval(timerInterval);
         };
     
@@ -363,10 +363,10 @@ var inputInit = document.createElement("input");
 
 function initialPage() {
     mainEl.textContent = "";
-    quesitonCount = 6;
+    questionCount = 6;
     
     doneHeader.textContent = "All Done!";
-    enterInitial.textContent = "Your final score is " + timeLeft;
+    enterInitial.textContent = "Your final score is " + (timeLeft-1);
     submitButton.textContent = "Submit";
     initialEnter.textContent = "Enter your initials: ";    
 
@@ -394,6 +394,9 @@ submitButton.addEventListener("click", function(event){
     var initialsScore = {
         initials: inputInit.value,
         score: timeLeft
+    };
+    if (inputInit.value === "") {
+        alert("Please enter your initials!")
     };
     console.log(initialsScore);
     localStorage.setItem("initialsScore", JSON.stringify(initialsScore));
