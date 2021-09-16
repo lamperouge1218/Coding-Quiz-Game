@@ -387,7 +387,7 @@ function initialPage() {
 };
 
 
-leaderboardArray = [];
+var leaderboardArray = [];
 
 
 
@@ -396,18 +396,15 @@ leaderboardArray = [];
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
 
+    leaderboardArray = JSON.parse(localStorage.getItem("leaderboardMaterial"));
+
     var initialsScore = {
         initials: inputInit.value,
         score: timeLeft
     };
 
-    console.log(initialsScore);
-    
+    leaderboardArray.push(initialsScore);//function fails due to .push not being a function???
     localStorage.setItem("leaderboardMaterial", JSON.stringify(initialsScore));
-
-  
-
-    
 
 
 });
