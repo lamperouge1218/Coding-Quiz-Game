@@ -1,18 +1,10 @@
-// Add classes to index that will allow the text below the header to be 
-// removed upon clicking the Start Quiz button
-
-// Class "startpage" added to h1, p, and button element of index.html
-// These can be querySelected as such
-
-// Adding all in startpage class to startPageClass variable
-// to wipe all text from these on button press
+// Global Variables
 var startPageClass = document.querySelector(".startpage");
 var quizStartButton = document.querySelector("#startbutton");
 var timeEl = document.querySelector(".time");
 var confirmText = document.querySelector(".confirmation-text");
 confirmText.setAttribute("style", "text-align:center");
 var leaderboardList = document.querySelector(".leaderboard-list");
-var restartButton = document.querySelector(".restart-button");
 
 // Creating mainEl variable so that data can be appended to it
 // later on in this process
@@ -389,6 +381,9 @@ function initialPage() {
 
 var leaderboardArray = [];
 
+var thanksForPlaying = document.createElement("h2");
+thanksForPlaying.textContent = "Thanks for playing!";
+
 
 
 // Stuff for storing the final initials and scores into an array for use in localStorage
@@ -396,7 +391,10 @@ var leaderboardArray = [];
 submitButton.addEventListener("click", function(event){
     event.preventDefault();
 
-    leaderboardArray = JSON.parse(localStorage.getItem("leaderboardMaterial"));
+    mainEl.textContent = "";
+    confirmText.textContent = "";
+    mainEl.appendChild(thanksForPlaying);
+    leaderboardList.textContent = "Leaderboard: ";
 
     var initialsScore = {
         initials: inputInit.value,
@@ -404,44 +402,19 @@ submitButton.addEventListener("click", function(event){
     };
 
     leaderboardArray.push(initialsScore);//function fails due to .push not being a function???
-    localStorage.setItem("leaderboardMaterial", JSON.stringify(initialsScore));
+    localStorage.setItem("leaderboardMaterial", JSON.stringify(leaderboardArray));
 
+    localStorageScores = JSON.parse(localStorage.getItem("leaderboardMaterial"));
+    console.log(localStorageScores);
+
+    // For loop needed to apply stuff to the leaderboard page
+    for (var i = 0; i < localStorageScores.length; i++) {
+        var score = localStorageScores[i];
+        console.log(score);
+        var li = document.createElement("li");
+        li.textContent = score.initials + ": " + score.score;
+        leaderboardList.appendChild(li);
+    };
 
 });
 
-
-
-
-
-// // var score = ;
-// var leaderBoard = document.querySelector(".leaderboard-list");
-
-// for (var i=0; i < initialsScore.length; i++) {
-//     var random = storedData[i];
-//     console.log(random);
-//     var li = document.createElement("li");
-//     li.textContent = inputInit.value + " " + timeLeft;
-// }
-// how do I get variables between functions?? possibly just redefine?
-
-
-// Upon clicking a button, I want to go to the next question
-// If that button is the wrong answer, remove 10 seconds from the timer and go to next
-// If that button is the correct answer, go to the next question 
-
-
-
-
-
-
-// In JS, will need to create, add content, style properly, and append
-// the first question into the <main> element in index
-
-// Possible function that is called to run when a question is answered???
-
-// Using objects and key/type stuff to store questions as single variables???
-
-
-
-
-// on click, move to next question - how do I do this???

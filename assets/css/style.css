@@ -23,6 +23,13 @@ p {
     text-align: center;
 }
 
+ul {
+    text-align: center;
+    padding: 0;
+    font-size: x-large;
+    font-weight: bold;
+}
+
 button {
     background-color: purple;
     border-radius: 5px;
