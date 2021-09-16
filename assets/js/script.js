@@ -379,7 +379,13 @@ function initialPage() {
 };
 
 
-var leaderboardArray = [];
+var leaderboardArray;
+if (JSON.parse(localStorage.getItem("leaderboardMaterial"))) {
+    leaderboardArray = JSON.parse(localStorage.getItem("leaderboardMaterial"));
+}
+else {
+    leaderboardArray = [];
+};
 
 var thanksForPlaying = document.createElement("h2");
 thanksForPlaying.textContent = "Thanks for playing!";
@@ -402,9 +408,11 @@ submitButton.addEventListener("click", function(event){
     };
 
     leaderboardArray.push(initialsScore);//function fails due to .push not being a function???
+
     localStorage.setItem("leaderboardMaterial", JSON.stringify(leaderboardArray));
 
-    localStorageScores = JSON.parse(localStorage.getItem("leaderboardMaterial"));
+    var localStorageScores = JSON.parse(localStorage.getItem("leaderboardMaterial"));
+
     console.log(localStorageScores);
 
     // For loop needed to apply stuff to the leaderboard page
@@ -417,5 +425,15 @@ submitButton.addEventListener("click", function(event){
     };
 
     console.log(localStorageScores);
+
+    var resetButton = document.createElement("button");
+    resetButton.textContent = "Play Again?";
+    mainEl.appendChild(resetButton);
+
+    resetButton.addEventListener("click", function(event){
+        event.target;
+        window.location.reload(false);
+        
+    })
 });
 
