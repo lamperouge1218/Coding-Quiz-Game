@@ -416,5 +416,6 @@ submitButton.addEventListener("click", function(event){
         leaderboardList.appendChild(li);
     };
 
+    console.log(localStorageScores);
 });
 
